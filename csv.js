@@ -11,10 +11,10 @@ async function csvFile() {
       元の行番号: columns[3],
     };
   });
-  for (let i = 0; i < data.内容.length; i++) {
+  for (let i = 0; i < data.length; i++) {
     document.getElementById('mains').innerHTML += `
       <div>
-        <p>${data.内容[i]}</p>
+        <p>${data[i].内容}</p>
       </div>
     `;
   }
