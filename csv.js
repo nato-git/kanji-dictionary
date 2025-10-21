@@ -5,10 +5,12 @@ async function csvFile() {
   const data = rows.map((row) => {
     const columns = row.split(',');
     return {
-      教科: columns[0],
-      ID: columns[1],
+      音読み: columns[0],
+      訓読み: columns[1],
       内容: columns[2],
-      元の行番号: columns[3],
+      部首: columns[3],
+      画数: columns[4],
+      熟語: columns[5],
     };
   });
   for (let i = 0; i < data.length; i++) {
