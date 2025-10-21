@@ -5,10 +5,10 @@ html {
   padding-left: 10px;
   background-color: aquamarine;
   text-shadow:
-    1px 1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    -1px -1px 0 #000;
+    1px 1px 0 #FFF,
+    1px -1px 0 #FFF,
+    -1px 1px 0 #FFF,
+    -1px -1px 0 #FFF;
 }
 
 h1 {
