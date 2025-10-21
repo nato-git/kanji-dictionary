@@ -18,12 +18,13 @@ async function csvFile() {
           <strong>${data[i].内容}</strong><br>
         </div>
       `;
-    }
-    document.getElementById('mains').innerHTML += `
+    } else {
+      document.getElementById('mains').innerHTML += `
       <div>
         <p>${data[i].内容}</p>
       </div>
     `;
+    }
   }
 }
 
