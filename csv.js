@@ -20,7 +20,7 @@ async function csvFile() {
       `;
     } else {
       document.getElementById('mains').innerHTML += `
-      <div>
+      <div class="kanji">
         <p>${data[i].内容}</p>
       </div>
     `;
