@@ -11,8 +11,8 @@ h1 {
 }
 
 .mains {
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: auto;
+  padding-right: auto;
   justify-content: center;
   align-items: flex-start;
   gap: 20px;
