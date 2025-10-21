@@ -12,6 +12,13 @@ async function csvFile() {
     };
   });
   for (let i = 0; i < data.length; i++) {
+    if (data[i].内容.length != 0) {
+      document.getElementById('mains').innerHTML += `
+        <div>
+          <strong>${data[i].内容}</strong><br>
+        </div>
+      `;
+    }
     document.getElementById('mains').innerHTML += `
       <div>
         <p>${data[i].内容}</p>
