@@ -17,10 +17,7 @@ h1 {
   align-items: flex-start;
   gap: 20px;
   margin-top: 10px;
-  font-size: 32.5px;
-}
-.mains > .kanji {
+  font-size: 30px;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  font-size: 30px;
 }

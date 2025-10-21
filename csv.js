@@ -12,15 +12,50 @@ async function csvFile() {
     };
   });
   for (let i = 0; i < data.length; i++) {
-    if (data[i].内容.length != 1) {
-      document.getElementById('mains').innerHTML += `
-        <div>
-          <strong>${data[i].内容}</strong><br>
-        </div>
-      `;
-    } else {
-      document.getElementById('mains').innerHTML += `
-      <div class="kanji">
+    //1年生
+    if (i >= 0 && i <= 80) {
+      document.getElementById('one').innerHTML += `
+      <div>
+        <p>${data[i].内容}</p>
+      </div>
+    `;
+    }
+    //2年生
+    else if (i >= 81 && i <= 240) {
+      document.getElementById('two').innerHTML += `
+      <div>
+        <p>${data[i].内容}</p>
+      </div>
+    `;
+    }
+    //3年生
+    else if (i >= 241 && i <= 441) {
+      document.getElementById('three').innerHTML += `
+      <div>
+        <p>${data[i].内容}</p>
+      </div>
+    `;
+    }
+    //4年生
+    else if (i >= 442 && i <= 642) {
+      document.getElementById('four').innerHTML += `
+      <div>
+        <p>${data[i].内容}</p>
+      </div>
+    `;
+    }
+    //5年生
+    else if (i >= 643 && i <= 828) {
+      document.getElementById('five').innerHTML += `
+      <div>
+        <p>${data[i].内容}</p>
+      </div>
+    `;
+    }
+    //6年生
+    else if (i >= 829 && i <= 1010) {
+      document.getElementById('six').innerHTML += `
+      <div>
         <p>${data[i].内容}</p>
       </div>
     `;
