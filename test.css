@@ -4,6 +4,8 @@ html {
   scroll-behavior: smooth;
   padding-left: 10px;
   background-color: aquamarine;
+  text-stroke: 1px, #000;
+  -webkit-text-stroke: 1px, #000;
 }
 
 h1 {
