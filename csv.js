@@ -12,7 +12,7 @@ async function csvFile() {
     };
   });
   for (let i = 0; i < data.length; i++) {
-    if (data[i].内容.length != 0) {
+    if (data[i].内容.length != 1) {
       document.getElementById('mains').innerHTML += `
         <div>
           <strong>${data[i].内容}</strong><br>
