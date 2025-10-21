@@ -3,7 +3,7 @@ html {
   font-size: 30px;
   scroll-behavior: smooth;
   padding-left: 10px;
-  background-color: aquamarine;
+  background-color: #a6fffa;
   text-shadow:
     1px 1px 0 #FFF,
     1px -1px 0 #FFF,
@@ -14,7 +14,7 @@ html {
 h1 {
   font-size: 35px;
   text-align: center;
-  color: #ffaabc;
+  color: #ff6efa;
 }
 
 .mains {
