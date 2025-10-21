@@ -23,3 +23,57 @@ h1 {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
 }
+
+.open {
+  max-width: 500px;
+  margin-bottom: 7px;
+  border: 2px solid #ff80ac;
+  border-radius: 5px;
+}
+
+.open summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 1em 2em;
+  background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2028%2028%22%3E%0A%20%20%20%20%3Ccircle%20cx%3D%2214%22%20cy%3D%2214%22%20r%3D%2214%22%20style%3D%22fill%3A%23ff80ac%3B%22%2F%3E%0A%3C%2Fsvg%3E');
+  background-position: right calc(2em - 7px) center;
+  background-size: 22px;
+  background-repeat: no-repeat;
+  color: #ff80ac;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.open summary::-webkit-details-marker {
+  display: none;
+}
+
+.open summary::after {
+  transform: translateY(-25%) rotate(45deg);
+  width: 5px;
+  height: 5px;
+  border-bottom: 3px solid #fff;
+  border-right: 3px solid #fff;
+  content: '';
+  transition: transform 0.3s;
+}
+
+.open[open] summary::after {
+  transform: rotate(225deg);
+}
+
+.open p {
+  transform: translateY(-10px);
+  opacity: 0;
+  margin: 0;
+  padding: 0 2em 1.5em;
+  color: #ffa3b6;
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+.open[open] p {
+  transform: none;
+  opacity: 1;
+}
