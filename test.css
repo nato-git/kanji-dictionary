@@ -19,7 +19,7 @@ h1 {
   margin-top: 10px;
   font-size: 32.5px;
 }
-.kanji {
+.mains > .kanji {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   font-size: 30px;
