@@ -1,5 +1,5 @@
-header {
-  background-color: #f8f9fa;
-  padding: 20px;
-  text-align: center;
+html {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 30px;
+  scroll-behavior: smooth;
 }
