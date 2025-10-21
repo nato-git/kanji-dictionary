@@ -25,7 +25,7 @@ h1 {
 }
 
 .open {
-  width: 1020px;
+  width: auto;
   max-width: 100%;
   margin-bottom: 7px;
   border: 2px solid #ff80ac;
