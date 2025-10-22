@@ -25,7 +25,9 @@ h1 {
 }
 .kanji {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 1fr);
+  grid-template-columns:
+    min-content repeat(3, 1fr)
+    max-content repeat(7, 1fr);
 }
 
 .open {
