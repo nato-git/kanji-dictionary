@@ -8,7 +8,7 @@ function resizePinnedImage(e) {
   }
   Tesseract.recognize(
     file,
-    'jpn', // 言語設定
+    'jpn-vert', // 言語設定
     { logger: (m) => console.log(m) }
   ).then(({ data: { text } }) => {
     const out = document.getElementById('output');
