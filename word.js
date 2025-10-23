@@ -57,7 +57,7 @@ async function resizePinnedImage(e) {
         return;
       }
 
-      const recognizedChars = text.split('').join('、');
+      const recognizedChars = text.split('');
       outputElement.innerHTML = ''; // 出力エリアをクリア
 
       // 【修正点2】Set を使用して、CSVデータとの照合処理を高速化
@@ -70,7 +70,7 @@ async function resizePinnedImage(e) {
         // Setを使って高速に照合
         if (knownKanjiSet.has(char)) {
           // CSVデータ（kanji.csv）に存在する漢字だけを連結
-          matchedText += char;
+          matchedText += char + '、';
         }
       }
 
