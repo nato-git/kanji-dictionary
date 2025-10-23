@@ -21,8 +21,9 @@ function resizePinnedImage(e) {
         熟語: columns[5],
       };
     });
+    return data;
   }
-  csvfile();
+  const data = csvfile();
   Tesseract.recognize(
     file,
     'jpn', // 言語設定
