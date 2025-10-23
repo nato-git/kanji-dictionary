@@ -22,6 +22,7 @@ function resizePinnedImage(e) {
       };
     });
   }
+  csvfile();
   Tesseract.recognize(
     file,
     'jpn', // 言語設定
