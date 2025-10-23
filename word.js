@@ -1,6 +1,7 @@
 const imageZone = document.getElementById('image_zone');
 imageZone.addEventListener('change', resizePinnedImage, false);
 function resizePinnedImage(e) {
+  document.getElementById('output').innerHTML = 'ロード中...';
   const file = e.target.files[0];
   if (!file.type.match('image.*')) {
     return;
