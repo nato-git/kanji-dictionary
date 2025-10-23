@@ -28,7 +28,7 @@ h1 {
   grid-template-columns:
     min-content repeat(3, 1fr)
     max-content repeat(7, 1fr)
-    repeat(auto-fill, 1fr);
+    repeat(auto-fill, minmax(100px, 1fr));
 }
 
 .open {
