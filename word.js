@@ -57,7 +57,7 @@ async function resizePinnedImage(e) {
         return;
       }
 
-      const recognizedChars = text.split('');
+      const recognizedChars = text.split('').join('、');
       outputElement.innerHTML = ''; // 出力エリアをクリア
 
       // 【修正点2】Set を使用して、CSVデータとの照合処理を高速化
