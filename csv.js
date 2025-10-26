@@ -90,7 +90,7 @@ function kanjiButton(i) {
     <p>部首：${kanjiData[i].部首}</p>
     <p>画数：${kanjiData[i].画数}</p>
     <p class="end">熟語：${kanjiData[i].熟語}</p>
-    <a href="https://nato-git.github.io/kanji-dictionary/home#">戻る</a>
+    <a href="home.html">戻る</a>
     </div>
   `;
   document.body.innerHTML = kanjiHTML;
