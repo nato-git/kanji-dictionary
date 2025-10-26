@@ -118,8 +118,8 @@ h1 {
 .kanji-find a {
   color: #ff6efa;
   margin: 0;
-  padding: 5px;
-  line-height: 1.5;
+  padding: 0 5px;
+  line-height: 1.2;
   text-align: center;
   display: block;
 }
