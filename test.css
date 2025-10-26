@@ -121,7 +121,7 @@ h1 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
   justify-content: start;
-  row-gap: 0;
+  row-gap: 5px;
 }
 .kanji-find a {
   color: #ff6efa;
@@ -129,14 +129,9 @@ h1 {
   padding-bottom: 5px;
   padding-left: 5px;
   padding-right: 5px;
-  margin-bottom: 0;
-  margin-top: 0;
+  margin-bottom: 5px;
+  margin-top: 5px;
   line-height: 1;
   display: block;
   text-align: center;
-}
-
-p {
-  margin-top: 0;
-  margin-bottom: 0;
 }
