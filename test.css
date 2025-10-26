@@ -118,6 +118,7 @@ h1 {
 .kanji-find {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  row-gap: 1px;
 }
 .kanji-find a {
   color: #ff6efa;
