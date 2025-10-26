@@ -68,7 +68,7 @@ async function resizePinnedImage(e) {
       }
 
       const recognizedChars = text.split('');
-      outputElement.innerHTML = '認識された漢字：'; // 出力エリアのヘッダー // 結果を一時的に保持する HTML 文字列
+      outputElement.innerHTML = '認識された漢字：<br>'; // 出力エリアのヘッダー // 結果を一時的に保持する HTML 文字列
 
       let matchedHtml = ''; // 認識された文字を1文字ずつチェック
 
@@ -79,7 +79,7 @@ async function resizePinnedImage(e) {
         if (index !== undefined) {
           // 【修正】該当する漢字が存在する場合、<a>タグを作成し、インデックスを渡す
           matchedHtml += `
-            <a href="#" onclick="kanjiButton(${index})" class="ocr-kanji-link">${char}</a>
+            <a href="#" onclick="kanjiButton(${index})">${char}</a>
           `;
         }
       } // ループを抜けた後、最後に一度だけ出力する

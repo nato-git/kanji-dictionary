@@ -114,3 +114,8 @@ h1 {
 .Filing {
   display: none;
 }
+
+.kanji-find {
+  font-size: 30px;
+  padding: 1%;
+}
