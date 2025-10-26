@@ -1,3 +1,15 @@
+function kanjiButton(i) {
+  const kanjiHTML = document.getElementById('body');
+  kanjiHTML.innerHTML = `
+    <h2>漢字：${data[i].内容}</h2>
+    <p>音読み：${data[i].音読み}</p>
+    <p>訓読み：${data[i].訓読み}</p>
+    <p>部首：${data[i].部首}</p>
+    <p>画数：${data[i].画数}</p>
+    <p>熟語：${data[i].熟語}</p>
+  `;
+}
+
 async function csvFile() {
   const csvfile = await fetch('kanji.csv');
   const csvtext = await csvfile.text();
@@ -66,15 +78,3 @@ async function csvFile() {
 }
 
 csvFile();
-
-function kanjiButton(i) {
-  const kanjiHTML = document.getElementById('body');
-  kanjiHTML.innerHTML = `
-    <h2>漢字：${data[i].内容}</h2>
-    <p>音読み：${data[i].音読み}</p>
-    <p>訓読み：${data[i].訓読み}</p>
-    <p>部首：${data[i].部首}</p>
-    <p>画数：${data[i].画数}</p>
-    <p>熟語：${data[i].熟語}</p>
-  `;
-}
