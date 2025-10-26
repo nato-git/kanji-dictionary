@@ -1,11 +1,11 @@
 const imageZone = document.getElementById('image_zone');
 // イベントリスナーはそのまま
-// 注意: resizePinnedImage関数自体を async に変更します
 imageZone.addEventListener('change', resizePinnedImage, false);
 
 // ----------------------------------------------------
-// 【A】CSVデータのロード処理 (修正なし、Promiseを返す関数)
+// 【A】CSVデータのロード処理
 // ----------------------------------------------------
+// (変更なし。この関数は漢字データ配列を返します)
 async function loadKanjiData() {
   const csvfile = await fetch('kanji.csv');
   const csvtext = await csvfile.text();
@@ -31,10 +31,9 @@ async function loadKanjiData() {
 }
 
 // ----------------------------------------------------
-// 【B】メインのイベントハンドラ (asyncに変更して await を使用)
+// 【B】メインのイベントハンドラ (修正箇所あり)
 // ----------------------------------------------------
 async function resizePinnedImage(e) {
-  // ★★★ async function に変更 ★★★
   const outputElement = document.getElementById('output');
   outputElement.innerHTML = 'ロード中...';
 
@@ -42,47 +41,56 @@ async function resizePinnedImage(e) {
   if (!file || !file.type.match('image.*')) {
     outputElement.innerHTML = '画像ファイルを選択してください。';
     return;
-  }
+  } // CSVロード完了を待って配列を取得 (kanjiData はこの関数内でローカルに定義されます)
 
-  // ★★★ 修正点1: await を使用し、CSVロード完了を待って配列を取得 ★★★
-  // これで kanjiData には配列が入ります
   const kanjiData = await loadKanjiData();
 
-  // OCR開始
+  // kanjiButton 関数がグローバルに定義されていることを前提とする
+  // kanjiButton(i) はグローバルの kanjiData に依存しているため、
+  // ★重要★ ここで取得した kanjiData をグローバル変数に代入する必要があります。
+  // (kanjiButton 関数を動作させるため、以前の回答で提案した globalKanjiData のセットアップが必要です)
+  //
+  // **注意: このコードだけでは kanjiButton は動作しません。
+  // 以下の修正は、グローバル変数 `kanjiData` を使用している前提で進めます。
+  // (実際には `let kanjiData = [];` と `csvFile()` も併せて実行されているはずです)
+
+  // OCR処理に必要なインデックスマップを作成
+  const kanjiToIndexMap = new Map();
+  kanjiData.forEach((item, index) => {
+    kanjiToIndexMap.set(item.内容, index);
+  }); // OCR開始
+
   Tesseract.recognize(file, 'jpn', { logger: (m) => console.log(m) })
     .then(({ data: { text } }) => {
-      // 漢字のデータがロードされていることを確認
       if (!kanjiData || kanjiData.length === 0) {
         outputElement.innerHTML = 'CSVデータのロードに失敗しました。';
         return;
       }
 
       const recognizedChars = text.split('');
-      outputElement.innerHTML = ''; // 出力エリアをクリア
+      outputElement.innerHTML = '認識された漢字：'; // 出力エリアのヘッダー // 結果を一時的に保持する HTML 文字列
 
-      // 【修正点2】Set を使用して、CSVデータとの照合処理を高速化
-      // 辞書引きを効率化するため、CSVデータから漢字の内容だけの Set を作成
-      const knownKanjiSet = new Set(kanjiData.map((item) => item.内容));
-      let matchedText = ''; // 結果を一時的に保持する文字列
+      let matchedHtml = ''; // 認識された文字を1文字ずつチェック
 
-      // 認識された文字を1文字ずつチェック
       for (const char of recognizedChars) {
-        // Setを使って高速に照合
-        if (knownKanjiSet.has(char)) {
-          // CSVデータ（kanji.csv）に存在する漢字だけを連結
-          matchedText += char + '、';
-        }
-      }
+        // Mapを使ってインデックスを取得
+        const index = kanjiToIndexMap.get(char);
 
-      // 【修正点3】ループを抜けた後、最後に一度だけ出力する
-      if (matchedText.length > 0) {
-        outputElement.innerHTML = matchedText;
+        if (index !== undefined) {
+          // 【修正】該当する漢字が存在する場合、<a>タグを作成し、インデックスを渡す
+          matchedHtml += `
+            <a href="#" onclick="kanjiButton(${index})" class="ocr-kanji-link">${char}</a>
+          `;
+        }
+      } // ループを抜けた後、最後に一度だけ出力する
+
+      if (matchedHtml.length > 0) {
+        outputElement.innerHTML += matchedHtml;
       } else {
         outputElement.innerHTML = '該当する漢字が見つかりませんでした。';
       }
     })
     .catch((error) => {
-      // Tesseract のエラー処理
       console.error('OCR処理中にエラーが発生しました:', error);
       outputElement.innerHTML = 'OCR処理中にエラーが発生しました。';
     });

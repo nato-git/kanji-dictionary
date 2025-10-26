@@ -81,13 +81,13 @@ async function csvFile() {
 }
 
 function goBack(homeHTML) {
-  document.body.innerHTML = homeHTML; // 保存したHTMLを復元
+  document.getElementById('mains').innerHTML = homeHTML; // 保存したHTMLを復元
 }
 
 // グローバルスコープに配置された kanjiButton 関数
 // クリック時に実行され、グローバルの kanjiData にアクセスする
 function kanjiButton(i) {
-  homeHTML = document.body.innerHTML; // 現在のHTMLを保存
+  homeHTML = document.getElementById('mains').innerHTML; // 現在のHTMLを保存
   const kanjiHTML = `<div class="kanji">
     <h2>漢字：${kanjiData[i].内容}</h2>
     <p>音読み：${kanjiData[i].音読み}</p>
@@ -99,7 +99,7 @@ function kanjiButton(i) {
     </div>
   `;
   // kanjiData を使用して情報を表示
-  document.body.innerHTML = kanjiHTML;
+  document.getElementById('mains').innerHTML = kanjiHTML;
 }
 
 // 最後に実行
