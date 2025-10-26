@@ -84,13 +84,13 @@ async function csvFile() {
 // クリック時に実行され、グローバルの kanjiData にアクセスする
 function kanjiButton(i) {
   const kanjiHTML = `<div class="kanji-detail">
-    <h2>漢字：${kanjiData[i].内容}</h2>
-    <p>音読み：${kanjiData[i].音読み}</p>
-    <p>訓読み：${kanjiData[i].訓読み}</p>
-    <p>部首：${kanjiData[i].部首}</p>
-    <p>画数：${kanjiData[i].画数}</p>
-    <p class="end">熟語：${kanjiData[i].熟語}</p>
-    <a href="home.html">戻る</a>
+    <h2><ruby>漢字<rt>かんじ</rt></ruby>：${kanjiData[i].内容}</h2>
+    <p><ruby>音読み<rt>おんよみ</rt></ruby>：${kanjiData[i].音読み}</p>
+    <p><ruby>訓読み<rt>くんよみ</rt></ruby>：${kanjiData[i].訓読み}</p>
+    <p><ruby>部首<rt>ぶしゅ</rt></ruby>：${kanjiData[i].部首}</p>
+    <p><ruby>画数<rt>かくすう</rt></ruby>：${kanjiData[i].画数}</p>
+    <p class="end"><ruby>熟語<rt>じゅくご</rt></ruby>：${kanjiData[i].熟語}</p>
+    <a href="home.html"><ruby>戻る<rt>もどる</rt></ruby></a>
     </div>
   `;
   document.body.innerHTML = kanjiHTML;
