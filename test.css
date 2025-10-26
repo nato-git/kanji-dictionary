@@ -114,3 +114,16 @@ h1 {
 .Filing {
   display: none;
 }
+
+.kanji_find {
+  color: #ff6efa;
+}
+.kanji_find a {
+  color: #ff6efa;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  line-height: 1.5;
+  padding: 0 2em 1.5em;
+}
