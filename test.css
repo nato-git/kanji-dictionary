@@ -117,11 +117,14 @@ h1 {
 
 .kanji-find {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
   color: #ff6efa;
 }
 .kanji-find a {
-  line-height: 1;
-  padding: 0 0.5em 1em;
+  line-height: 1.2;
+  padding-top: 0;
+  padding-left: 0.25em;
+  padding-right: 0.25em;
+  padding-bottom: 0.5em;
   transform: translateY(0.5em);
 }
