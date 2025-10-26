@@ -27,6 +27,7 @@ h1 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   color: #ff6efa;
+  padding:10%
 }
 
 .open {
@@ -73,7 +74,8 @@ h1 {
 .open a {
   transform: translateY(-10px);
   opacity: 0;
-  padding:10%;
+  padding:3%;
+  margun:0;
   color: #ff6efa;
   transition: transform 0.5s, opacity 0.5s;
 }
@@ -89,5 +91,4 @@ h1 {
 }
 .end {
   padding-bottom: 10%;
-  font-size: 20px;
 }
