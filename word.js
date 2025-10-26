@@ -68,7 +68,7 @@ async function resizePinnedImage(e) {
       }
 
       const recognizedChars = text.split('');
-      outputElement.innerHTML = '認識された漢字：<br>'; // 出力エリアのヘッダー // 結果を一時的に保持する HTML 文字列
+      outputElement.innerHTML = ''; // 出力エリアのヘッダー // 結果を一時的に保持する HTML 文字列
 
       let matchedHtml = ''; // 認識された文字を1文字ずつチェック
 
