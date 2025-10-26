@@ -27,7 +27,7 @@ h1 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   color: #ff6efa;
-  padding-bottom: 10%;
+  padding-bottom: 10px;
 }
 
 .open {
