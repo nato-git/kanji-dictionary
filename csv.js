@@ -18,7 +18,7 @@ async function csvFile() {
     if (i >= 0 && i <= 80) {
       document.getElementById('one').innerHTML += `
       <div>
-        <a href="csv.js" onclick="kanjiButton(i)">${data[i].内容}</a>
+        <a onclick="kanjiButton(i)">${data[i].内容}</a>
       </div>
     `;
     }
@@ -26,7 +26,7 @@ async function csvFile() {
     else if (i >= 81 && i <= 240) {
       document.getElementById('two').innerHTML += `
       <div>
-        <a href="csv.js" onclick="kanjiButton(i)">${data[i].内容}</a>
+        <a onclick="kanjiButton(i)">${data[i].内容}</a>
       </div>
     `;
     }
@@ -34,7 +34,7 @@ async function csvFile() {
     else if (i >= 241 && i <= 441) {
       document.getElementById('three').innerHTML += `
       <div>
-        <a href="csv.js" onclick="kanjiButton(i)">${data[i].内容}</a>
+        <a onclick="kanjiButton(i)">${data[i].内容}</a>
       </div>
     `;
     }
@@ -42,7 +42,7 @@ async function csvFile() {
     else if (i >= 442 && i <= 642) {
       document.getElementById('four').innerHTML += `
       <div>
-        <a href="csv.js" onclick="kanjiButton(i)">${data[i].内容}</a>
+        <a onclick="kanjiButton(i)">${data[i].内容}</a>
       </div>
     `;
     }
@@ -50,7 +50,7 @@ async function csvFile() {
     else if (i >= 643 && i <= 828) {
       document.getElementById('five').innerHTML += `
       <div>
-        <a href="csv.js" onclick="kanjiButton(i)">${data[i].内容}</a>
+        <a onclick="kanjiButton(i)">${data[i].内容}</a>
       </div>
     `;
     }
@@ -58,7 +58,7 @@ async function csvFile() {
     else if (i >= 829 && i <= 1010) {
       document.getElementById('six').innerHTML += `
       <div>
-        <a href="csv.js" onclick="kanjiButton(i)">${data[i].内容}</a>
+        <a onclick="kanjiButton(i)">${data[i].内容}</a>
       </div>
     `;
     }
