@@ -122,8 +122,6 @@ h1 {
 }
 .kanji-find a {
   line-height: 1;
-  padding: 0 0.5em 1.5em;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-  transform: translateY(-0.5em);
+  padding: 0 0.5em 1em;
+  transform: translateY(0.5em);
 }
