@@ -73,7 +73,7 @@ h1 {
 .open a {
   transform: translateY(-10px);
   opacity: 0;
-  padding: 0 1em;
+  padding: 0 2em 1.5em;
   margin: 0;
   color: #ff6efa;
   transition: transform 0.5s, opacity 0.5s;
