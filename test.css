@@ -117,6 +117,7 @@ h1 {
 
 .kanji-find a {
   padding: 3px;
+  margin: 3px;
   color: #ff6efa;
 }
 .kanji-find {
