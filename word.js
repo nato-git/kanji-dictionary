@@ -79,7 +79,7 @@ async function resizePinnedImage(e) {
         if (index !== undefined) {
           // 【修正】該当する漢字が存在する場合、<a>タグを作成し、インデックスを渡す
           matchedHtml += `
-            <a href="#" onclick="kanjiButton(${index})>${char}</a>
+            <a href=# onclick="kanjiButton(${index})">${char}</a>
           `;
         }
       } // ループを抜けた後、最後に一度だけ出力する
