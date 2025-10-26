@@ -116,11 +116,7 @@ h1 {
 }
 
 .kanji-find a {
-  font-size: 30px;
-  margin-left: 5px;
-  margin-right: 5px;
-  margin-top: 3px;
-  margin-bottom: 3px;
+  padding: 3px;
   color: #ff6efa;
 }
 .kanji-find {
