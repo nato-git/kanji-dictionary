@@ -68,7 +68,7 @@ async function csvFile() {
 csvFile();
 
 function kanjiButton(i) {
-  const kanjiHTML = document.getElementById('kanjiHTML');
+  const kanjiHTML = document.getElementById('body');
   kanjiHTML.innerHTML = `
     <h2>漢字：${data[i].内容}</h2>
     <p>音読み：${data[i].音読み}</p>
