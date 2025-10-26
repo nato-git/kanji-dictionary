@@ -80,14 +80,9 @@ async function csvFile() {
   }
 }
 
-function goBack(homeHTML) {
-  document.getElementById('mains').innerHTML = homeHTML; // 保存したHTMLを復元
-}
-
 // グローバルスコープに配置された kanjiButton 関数
 // クリック時に実行され、グローバルの kanjiData にアクセスする
 function kanjiButton(i) {
-  homeHTML = document.getElementById('mains').innerHTML; // 現在のHTMLを保存
   const kanjiHTML = `<div class="kanji">
     <h2>漢字：${kanjiData[i].内容}</h2>
     <p>音読み：${kanjiData[i].音読み}</p>
@@ -95,11 +90,10 @@ function kanjiButton(i) {
     <p>部首：${kanjiData[i].部首}</p>
     <p>画数：${kanjiData[i].画数}</p>
     <p class="end">熟語：${kanjiData[i].熟語}</p>
-    <a href=# onclick="goBack(${homeHTML})">戻る</a>
+    <a href="https://nato-git.github.io/kanji-dictionary/home#">戻る</a>
     </div>
   `;
-  // kanjiData を使用して情報を表示
-  document.getElementById('mains').innerHTML = kanjiHTML;
+  document.body.innerHTML = kanjiHTML;
 }
 
 // 最後に実行
