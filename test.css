@@ -104,10 +104,12 @@ h1 {
   padding: 10px;
   margin-top: 10px;
   font-size: 25px;
-  background-color: #ff80ac;
+  background-color: #ffacac;
   color: #ff6efa;
-  border: 2px solid #ff55fa;
-  border-radius: 10%;
+  border: 5px solid #ff55fa;
+  border-radius: 10px;
+  margin-left: 8px;
+  margin-right: 8px;
 }
 .Filing {
   display: none;
