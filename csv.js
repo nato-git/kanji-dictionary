@@ -83,7 +83,7 @@ async function csvFile() {
 // グローバルスコープに配置された kanjiButton 関数
 // クリック時に実行され、グローバルの kanjiData にアクセスする
 function kanjiButton(i) {
-  const kanjiHTML = `<div class="kanji">
+  const kanjiHTML = `<div color=#ff6efa>
     <h2>漢字：${kanjiData[i].内容}</h2>
     <p>音読み：${kanjiData[i].音読み}</p>
     <p>訓読み：${kanjiData[i].訓読み}</p>
