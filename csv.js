@@ -83,13 +83,18 @@ async function csvFile() {
 // グローバルスコープに配置された kanjiButton 関数
 // クリック時に実行され、グローバルの kanjiData にアクセスする
 function kanjiButton(i) {
+  const homeHTML = document.body.innerHTML; // ホーム画面のHTMLを保存
+  function goBack() {
+    document.body.innerHTML = homeHTML; // 保存したホーム画面のHTMLを復元
+  }
   const kanjiHTML = `
     <h2>漢字：${kanjiData[i].内容}</h2>
     <p>音読み：${kanjiData[i].音読み}</p>
     <p>訓読み：${kanjiData[i].訓読み}</p>
     <p>部首：${kanjiData[i].部首}</p>
     <p>画数：${kanjiData[i].画数}</p>
-    <p>熟語：${kanjiData[i].熟語}</p>
+    <p class="end">熟語：${kanjiData[i].熟語}</p>
+    <a href=# onclick="goBack()">戻る</a>
   `;
   // kanjiData を使用して情報を表示
   document.body.innerHTML = kanjiHTML;
