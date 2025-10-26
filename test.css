@@ -110,12 +110,14 @@ h1 {
   border-radius: 10px;
   margin-left: 10px;
   margin-right: 10px;
+  margin-bottom: 0;
 }
 .Filing {
   display: none;
 }
 
 .kanji-find {
+  margin-top: 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
   justify-content: start;
@@ -124,6 +126,7 @@ h1 {
 .kanji-find a {
   color: #ff6efa;
   padding-top: 0;
+  padding-bottom: 0;
   padding-left: 0.25em;
   padding-right: 0.25em;
   line-height: 0.9;
