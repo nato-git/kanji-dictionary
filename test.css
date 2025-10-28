@@ -140,7 +140,8 @@ h1 {
 }
 .FindArea input {
   font-size: 25px;
-  width: 90%;
+  width: auto;
+  max-width: 100%;
   height: 1.2em;
   padding: 5px;
   margin: 3px;
