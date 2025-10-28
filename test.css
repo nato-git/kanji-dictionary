@@ -122,8 +122,9 @@ h1 {
   grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
   justify-content: start;
   row-gap: 5px;
-  border-bottom: #2c3d2e 3px solid;
+  border-bottom: #2c3d2e 5px solid;
   border-width: 90%;
+  margin-bottom: 10px;
 }
 .kanji-find a {
   color: #ff6efa;
