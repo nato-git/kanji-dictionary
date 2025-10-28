@@ -103,11 +103,15 @@ csvFile();
 document.getElementById('findarea').addEventListener('keydown', (event) => {
   if (event.key == 'Enter') {
     const FindWord = document.getElementById('findarea').value;
+    var pushword = '';
     for (let i = 0; i <= kanjiData.length; i++) {
       if (FindWord === kanjiData[i].内容) {
-        const pushWord = `<div>
+        pushWord = `<div>
           <a href=# onclick="kanjiButton(${i})">${kanjiData[i].内容}</a>
         </div>`;
+      else if (i == kanjiData.length && pushword == ''){
+      pushword = '<div><p>小学生の範囲ではありません</p></div>';
+}
         document.getElementById('AreaReturn').innerHTML = pushWord;
         return;
       }
