@@ -144,5 +144,7 @@ h1 {
   border: #ff55fa 5px solid;
   border-radius: 30px;
   background-color: #ffbbac;
-  color: #c0ffc5;
+  color: #2c3d2e;
+  text-shadow: 1px 1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
+    -1px -1px 0 #fff;
 }
