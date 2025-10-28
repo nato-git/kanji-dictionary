@@ -108,6 +108,7 @@ document.getElementById('findarea').addEventListener('keydown', (event) => {
         const pushWord = `<div>
           <a href=# onclick="kanjiButton(${i})">${kanjiData[i].内容}</a>
         </div>`;
+        document.getElementById('AreaReturn').innerHTML = pushWord;
         return;
       }
     }
