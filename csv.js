@@ -78,6 +78,7 @@ async function csvFile() {
       `;
     }
   }
+  return kanjiData;
 }
 
 // グローバルスコープに配置された kanjiButton 関数
@@ -98,3 +99,17 @@ function kanjiButton(i) {
 
 // 最後に実行
 csvFile();
+
+document.getElementById('findarea').addEventListener('keydown', (event) => {
+  if (event.key == 'Enter') {
+    const FindWord = document.getElementById('findarea').value;
+    for (let i = 0; i <= kanjiData.length; i++) {
+      if (FindWord === kanjiData[i].内容) {
+        const pushWord = `<div>
+          <a href=# onclick="kanjiButton(${i})">${kanjiData[i].内容}</a>
+        </div>`;
+        return;
+      }
+    }
+  }
+});
