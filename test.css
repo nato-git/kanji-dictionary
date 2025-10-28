@@ -135,7 +135,7 @@ h1 {
   display: block;
   text-align: center;
 }
-.FindArea textarea {
+.FindArea input {
   width: auto;
   height: 1.2em;
   padding: 3px;
