@@ -103,7 +103,7 @@ csvFile();
 document.getElementById('findarea').addEventListener('keydown', (event) => {
   if (event.key == 'Enter') {
     const FindWord = document.getElementById('findarea').value;
-    var pushword = '';
+    var pushWord = '';
     for (let i = 0; i <= kanjiData.length; i++) {
       if (FindWord === kanjiData[i].内容) {
         pushWord = `<div>
@@ -113,9 +113,9 @@ document.getElementById('findarea').addEventListener('keydown', (event) => {
         document.getElementById('AreaReturn').innerHTML = pushWord;
         return;
       }
-      else if (i == kanjiData.length && pushword == ''){
+      else if (i == kanjiData.length && pushWord == ''){
       pushword = '<div><p>小学生の範囲ではありません</p></div>';
-document.getElementById('AreaReturn').innerHTML = pushword;
+document.getElementById('AreaReturn').innerHTML = pushWord;
 }
     }
   }
