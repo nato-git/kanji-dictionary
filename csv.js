@@ -104,19 +104,20 @@ document.getElementById('findarea').addEventListener('keydown', (event) => {
   if (event.key == 'Enter') {
     const FindWord = document.getElementById('findarea').value;
     var pushWord = '';
-    for (let i = 0; i <= kanjiData.length; i++) {
+    for (let i = 0; i < kanjiData.length; i++) {
       if (FindWord === kanjiData[i].内容) {
         pushWord = `<div>
           <a href=# onclick="kanjiButton(${i})">${kanjiData[i].内容}</a>
         </div>`;
-
         document.getElementById('AreaReturn').innerHTML = pushWord;
         return;
-      } else if (i == kanjiData.length && pushWord == '') {
-        pushWord =
-          '<div><p><ruby>小学生<rt>しょうがくせい<rt></ruby>の<ruby>範囲<rt>はんい<rt></ruby>ではありません</p></div>';
-        document.getElementById('AreaReturn').innerHTML = pushWord;
       }
+    }
+    if (pushWord == '') {
+      pushWord =
+        '<div><p><ruby>小学生<rt>しょうがくせい<rt></ruby>の<ruby>範囲<rt>はんい<rt></ruby>ではありません</p></div>';
+      document.getElementById('AreaReturn').innerHTML = pushWord;
+      return;
     }
   }
 });
