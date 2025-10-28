@@ -146,16 +146,3 @@ h1 {
   background-color: #ffbbac;
   color: #ff6efa;
 }
-
-.AreaReturn a {
-  color: #ff6efa;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin-bottom: 5px;
-  margin-top: 5px;
-  line-height: 1;
-  display: block;
-  text-align: center;
-}
