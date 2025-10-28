@@ -109,14 +109,14 @@ document.getElementById('findarea').addEventListener('keydown', (event) => {
         pushWord = `<div>
           <a href=# onclick="kanjiButton(${i})">${kanjiData[i].内容}</a>
         </div>`;
-      
+
         document.getElementById('AreaReturn').innerHTML = pushWord;
         return;
+      } else if (i == kanjiData.length && pushWord == '') {
+        pushWord =
+          '<div><p><ruby>小学生<rt>しょうがくせい<rt></ruby>の<ruby>範囲<rt>はんい<rt></ruby>ではありません</p></div>';
+        document.getElementById('AreaReturn').innerHTML = pushWord;
       }
-      else if (i == kanjiData.length && pushWord == ''){
-      pushword = '<div><p>小学生の範囲ではありません</p></div>';
-document.getElementById('AreaReturn').innerHTML = pushWord;
-}
     }
   }
 });
