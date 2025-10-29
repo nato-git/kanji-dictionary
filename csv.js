@@ -21,6 +21,7 @@ async function csvFile() {
         部首: columns[3],
         画数: columns[4],
         熟語: columns[5],
+        熟語ふりがな: columns[6],
       };
     })
     .filter((item) => item !== null); // nullをフィルタリングして除外
@@ -90,7 +91,7 @@ function kanjiButton(i) {
     <p><ruby>訓読み<rt>くんよみ</rt></ruby>：${kanjiData[i].訓読み}</p>
     <p><ruby>部首<rt>ぶしゅ</rt></ruby>：${kanjiData[i].部首}</p>
     <p><ruby>画数<rt>かくすう</rt></ruby>：${kanjiData[i].画数}</p>
-    <p class="end"><ruby>熟語<rt>じゅくご</rt></ruby>：${kanjiData[i].熟語}</p>
+    <p class="end"><ruby>熟語<rt>じゅくご</rt></ruby>：<ruby>${kanjiData[i].熟語}<rt>${kanjiData[i].熟語ふりがな}</rt></ruby></p>
     <a href="home.html"><ruby>戻る<rt>もどる</rt></ruby></a>
     </div>
   `;
