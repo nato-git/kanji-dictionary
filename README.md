@@ -37,7 +37,7 @@ csv.js の実装に基づく列順（インデックス）:
 2. 簡易サーバを起動（ブラウザのローカルファイル制約を回避するため）
    - Python 3 の場合:
      - python -m http.server 8000
-     - ブラウザで http://localhost:8000/home.html を開く
+     - ブラウザで https://nato-git.github.io/kanji-dictionary/home を開く
    - Node.js の場合は http-server 等を利用
 
 直接 home.html をファイルとして開くこともできますが、多くのブラウザで fetch によるローカル CSV 読み込みがブロックされるため、上記のローカルサーバ方式を推奨します。
