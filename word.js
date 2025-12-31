@@ -1,20 +1,15 @@
 const imageZone = document.getElementById('image_zone');
-// イベントリスナーはそのまま
 imageZone.addEventListener('change', resizePinnedImage, false);
 
-// ----------------------------------------------------
-// 【A】CSVデータのロード処理
-// ----------------------------------------------------
-// (変更なし。この関数は漢字データ配列を返します)
 async function loadKanjiData() {
   const csvfile = await fetch('kanji.csv');
   const csvtext = await csvfile.text();
-  const rows = csvtext.split('\n').filter((row) => row.trim() !== ''); // 空行を除外
+  const rows = csvtext.split('\n').filter((row) => row.trim() !== '');
 
   const data = rows
     .map((row) => {
       const columns = row.split(',');
-      if (columns.length < 3 || !columns[2]) return null; // データ不足行をスキップ
+      if (columns.length < 3 || !columns[2]) return null;
 
       return {
         音読み: columns[0],
@@ -30,9 +25,6 @@ async function loadKanjiData() {
   return data; // 漢字データの配列を返す
 }
 
-// ----------------------------------------------------
-// 【B】メインのイベントハンドラ (修正箇所あり)
-// ----------------------------------------------------
 async function resizePinnedImage(e) {
   const outputElement = document.getElementById('output');
   outputElement.innerHTML = 'ロード中...';
@@ -41,18 +33,9 @@ async function resizePinnedImage(e) {
   if (!file || !file.type.match('image.*')) {
     outputElement.innerHTML = '画像ファイルを選択してください。';
     return;
-  } // CSVロード完了を待って配列を取得 (kanjiData はこの関数内でローカルに定義されます)
+  }
 
   const kanjiData = await loadKanjiData();
-
-  // kanjiButton 関数がグローバルに定義されていることを前提とする
-  // kanjiButton(i) はグローバルの kanjiData に依存しているため、
-  // ★重要★ ここで取得した kanjiData をグローバル変数に代入する必要があります。
-  // (kanjiButton 関数を動作させるため、以前の回答で提案した globalKanjiData のセットアップが必要です)
-  //
-  // **注意: このコードだけでは kanjiButton は動作しません。
-  // 以下の修正は、グローバル変数 `kanjiData` を使用している前提で進めます。
-  // (実際には `let kanjiData = [];` と `csvFile()` も併せて実行されているはずです)
 
   // OCR処理に必要なインデックスマップを作成
   const kanjiToIndexMap = new Map();

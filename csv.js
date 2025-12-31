@@ -122,3 +122,51 @@ document.getElementById('findarea').addEventListener('keydown', (event) => {
     }
   }
 });
+
+document
+  .getElementById('findarea_sound')
+  .addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+      // 入力値をひらがなに変換
+      const rawInput = document.getElementById('findarea_sound').value.trim();
+      const findWord = toHiragana(rawInput);
+
+      if (!findWord) return;
+
+      let pushWord = '';
+
+      for (let i = 0; i < kanjiData.length; i++) {
+        // データの音読み・訓読みもひらがなに変換して比較
+        const onyomiList = kanjiData[i].音読み
+          .split('・')
+          .map((y) => toHiragana(y));
+        const kunyomiList = kanjiData[i].訓読み.split('・').map((y) => {
+          // 送り仮名を除去
+          const base = y.includes('（') ? y.substring(0, y.indexOf('（')) : y;
+          return toHiragana(base);
+        });
+
+        if (onyomiList.includes(findWord) || kunyomiList.includes(findWord)) {
+          pushWord += `<div>
+          <a href="#" onclick="kanjiButton(${i})">${kanjiData[i].内容}</a>
+        </div>`;
+        }
+      }
+
+      if (pushWord === '') {
+        pushWord =
+          '<div><p><ruby>小学生<rt>しょうがくせい</rt></ruby>の<ruby>範囲<rt>はんい</rt></ruby>ではありません</p></div>';
+      }
+      document.getElementById('AreaReturn').innerHTML = pushWord;
+    }
+  });
+
+/**
+ * カタカナをひらがなに変換する関数
+ */
+function toHiragana(str) {
+  return str.replace(/[\u30a1-\u30f6]/g, function (match) {
+    const chr = match.charCodeAt(0) - 0x60;
+    return String.fromCharCode(chr);
+  });
+}

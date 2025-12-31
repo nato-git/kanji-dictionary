@@ -152,3 +152,12 @@ h1 {
   text-shadow: 1px 1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
     -1px -1px 0 #fff;
 }
+
+footer {
+  border-top: #2c3d2e 5px solid;
+  margin-top: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #ff6efa;
+  font-size: 20px;
+}

@@ -25,6 +25,11 @@
           id="findarea"
           maxlength="1"
         />
+        <input
+          type="text"
+          placeholder="🔍調べたい漢字の読み方を入力"
+          id="findarea_sound"
+        />
       </div>
       <div id="AreaReturn" class="kanji-find"></div>
 
@@ -80,8 +85,17 @@
         </details>
       </div>
     </main>
+    <footer>
+      <div>
+        ご<ruby>意見<rt>いけん</rt></ruby
+        >、<ruby>要望<rt>ようぼう</rt></ruby
+        >などはこちらから⇒<a href="https://forms.cloud.microsoft/r/zucZJ0L4kn"
+          >アンケート</a
+        >
+      </div>
+    </footer>
   </body>
   <script src="csv.js"></script>
   <script src="https://unpkg.com/tesseract.js@v6.0.1/dist/tesseract.min.js"></script>
-  <script src="word.js" type="module"></script>
+  <script src="word.js"></script>
 </html>
