@@ -104,6 +104,8 @@ csvFile();
 document.getElementById('findarea').addEventListener('keydown', (event) => {
   if (event.key == 'Enter') {
     const FindWord = document.getElementById('findarea').value;
+    event.preventDefault();
+    event.target.blur();
     var pushWord = '';
     for (let i = 0; i < kanjiData.length; i++) {
       if (FindWord === kanjiData[i].内容) {
@@ -127,6 +129,8 @@ document
   .getElementById('findarea_sound')
   .addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
+      event.preventDefault();
+      event.target.blur();
       // 入力値をひらがなに変換
       const rawInput = document.getElementById('findarea_sound').value.trim();
       const findWord = toHiragana(rawInput);
