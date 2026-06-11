@@ -34,7 +34,7 @@ async function csvFile() {
     if (i >= 0 && i <= 80) {
       document.getElementById('one').innerHTML += `
         <div>
-          <a href=# onclick="kanjiButton(${i})">${kanjiData[i].内容}</a>
+          <a href="word.html?index=${i}">${kanjiData[i].内容}</a>
         </div>
       `;
     }
@@ -42,7 +42,7 @@ async function csvFile() {
     else if (i >= 81 && i <= 240) {
       document.getElementById('two').innerHTML += `
         <div>
-          <a href=# onclick="kanjiButton(${i})">${kanjiData[i].内容}</a>
+          <a href="word.html?index=${i}">${kanjiData[i].内容}</a>
         </div>
       `;
     }
@@ -50,7 +50,7 @@ async function csvFile() {
     else if (i >= 241 && i <= 441) {
       document.getElementById('three').innerHTML += `
         <div>
-          <a href=# onclick="kanjiButton(${i})">${kanjiData[i].内容}</a>
+          <a href="word.html?index=${i}">${kanjiData[i].内容}</a>
         </div>
       `;
     }
@@ -58,7 +58,7 @@ async function csvFile() {
     else if (i >= 442 && i <= 642) {
       document.getElementById('four').innerHTML += `
         <div>
-          <a href=# onclick="kanjiButton(${i})">${kanjiData[i].内容}</a>
+          <a href="word.html?index=${i}">${kanjiData[i].内容}</a>
         </div>
       `;
     }
@@ -66,7 +66,7 @@ async function csvFile() {
     else if (i >= 643 && i <= 828) {
       document.getElementById('five').innerHTML += `
         <div>
-          <a href=# onclick="kanjiButton(${i})">${kanjiData[i].内容}</a>
+          <a href="word.html?index=${i}">${kanjiData[i].内容}</a>
         </div>
       `;
     }
@@ -74,28 +74,12 @@ async function csvFile() {
     else if (i >= 829 && i <= 1010) {
       document.getElementById('six').innerHTML += `
         <div>
-          <a href=# onclick="kanjiButton(${i})">${kanjiData[i].内容}</a>
+          <a href="word.html?index=${i}">${kanjiData[i].内容}</a>
         </div>
       `;
     }
   }
   return kanjiData;
-}
-
-// グローバルスコープに配置された kanjiButton 関数
-// クリック時に実行され、グローバルの kanjiData にアクセスする
-function kanjiButton(i) {
-  const kanjiHTML = `<div class="kanji-detail">
-    <h2><ruby>漢字<rt>かんじ</rt></ruby>：${kanjiData[i].内容}</h2>
-    <p><ruby>音読み<rt>おんよみ</rt></ruby>：${kanjiData[i].音読み}</p>
-    <p><ruby>訓読み<rt>くんよみ</rt></ruby>：${kanjiData[i].訓読み}</p>
-    <p><ruby>部首<rt>ぶしゅ</rt></ruby>：${kanjiData[i].部首}</p>
-    <p><ruby>画数<rt>かくすう</rt></ruby>：${kanjiData[i].画数}</p>
-    <p class="end"><ruby>熟語<rt>じゅくご</rt></ruby>：<ruby>${kanjiData[i].熟語}<rt>${kanjiData[i].熟語ふりがな}</rt></ruby></p>
-    <a href="home.html"><ruby>戻る<rt>もどる</rt></ruby></a>
-    </div>
-  `;
-  document.body.innerHTML = kanjiHTML;
 }
 
 // 最後に実行
@@ -110,7 +94,7 @@ document.getElementById('findarea').addEventListener('keydown', (event) => {
     for (let i = 0; i < kanjiData.length; i++) {
       if (FindWord === kanjiData[i].内容) {
         pushWord = `<div>
-          <a href=# onclick="kanjiButton(${i})">${kanjiData[i].内容}</a>
+          <a href="word.html?index=${i}">${kanjiData[i].内容}</a>
         </div>`;
         document.getElementById('AreaReturn').innerHTML = pushWord;
         return;
@@ -152,7 +136,7 @@ document
 
         if (onyomiList.includes(findWord) || kunyomiList.includes(findWord)) {
           pushWord += `<div>
-          <a href="#" onclick="kanjiButton(${i})">${kanjiData[i].内容}</a>
+          <a href="word.html?index=${i}">${kanjiData[i].内容}</a>
         </div>`;
         }
       }
