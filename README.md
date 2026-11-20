@@ -2,6 +2,10 @@
 
 小学生で習う漢字（1〜6 年生）を一覧・検索できる軽量な静的ウェブアプリケーションです。kanji.csv をクライアント側で読み込み、HTML/CSS/Vanilla JavaScript で動作します。画像からの文字認識には Tesseract.js を利用しています（home.html に CDN 経由で読み込みあり）。
 
+## サイトへ
+
+**[小学生向け漢字辞典](https://nato-git.github.io/kanji-dictionary/src/home)**
+
 ## 主要機能
 
 - 学年別（1〜6 年）に漢字一覧を表示
@@ -38,6 +42,3 @@ csv.js の実装に基づく列順（インデックス）:
 - 学年一覧: 各学年（1〜6 年）のセクションから漢字を直接クリックできます。
 - 画像から検索: 画像をアップロードすると Tesseract.js（home.html で unpkg の v6.0.1 を使用）で文字を抽出し、抽出結果を検索に使います。
 
-## サイトへ
-
-[小学生向け漢字辞典](https://nato-git.github.io/kanji-dictionary/home)
